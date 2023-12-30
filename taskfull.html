@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <title>example</title>
+        <style>
+            .dd{
+                    font-size: 600px;
+                    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                    text-align: center;
+            }
+            .mm{
+              border: none;
+              height: 550px;
+              width: 550px;
+          
+            }
+        </style>
+       <script>
+        function bord(ev){
+            let status=document.getElementById('status')
+            let ima=document.getElementById('image')
+          var ch=ev.key;
+         // alert(ch)
+            var arr=['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+            let arb=new Map([["A","Apple"],["B","Ball"],["C","cat"],["D","Dog"],["E","Elephants"],["F","Fish"],["G","Goat"],["H","Hen"],["I","Ice Cream"],["J","Jug"],["K","Kite"],["L","Lotus"],["M","Monkey"],["N","Net"],["O","Orange"],["P","Peacock"],["Q","Queen"],["R","Rose"],["S","Sun"],["T","Tiger"],["U","Umbrella"],["V","Van"],["W","Watch"],["X","Xmas tree"],["Y","Yak"],["Z","Zebra"]]);
+            status.innerHTML=ch;
+           ima=ch+'.png';
+           image.src=ima;
+         // cm="komal";
+          // function textToSpeech()
+           // {
+           // var msg=document.getElementById("status").value;
+         //  for()
+           //if(arr[i]==arb[i]){
+            //    var cm=arb[i];
+              //  break;
+          /// }
+         // arb.forEach((v,k){
+           // if(ch==k){
+             // var cm=v;
+            //break;}
+            
+         // });
+     var tmp=ch.toUpperCase();
+       var cm= arb.get(tmp);
+          //let sname=arb.filter(function(data))
+                if(speechSynthesis)
+                {
+                    var speech=new SpeechSynthesisUtterance();
+                    speech.language="en-us";
+                    speech.text=ch+"for"+cm;
+                    speech.volume=1;
+                    speech.rate=1;
+                    speech.pitch=2;
+                    window.speechSynthesis.speak(speech);
+
+                }
+                else
+                alert("Sorry !! Speech API Not Supported..");
+            //}
+     }
+       </script>
+    </head>
+    <body onkeyup="bord(event);">
+        <table width="1460px" border="2" height="700px" cellspacing="0">
+            <tr>
+                <td width="730" style="background-color: aqua;"><div class="dd" id="status" name="status"></div></td>
+                <td  width="730" style="background-color: white;"><center><img class="mm"  name="image" id="image" ></center></td>
+
+            </tr>
+        </table>
+    </body>
+</html>
